@@ -3,27 +3,34 @@ Algoritmo Factura
     // 1. Definir variables
     Definir nombre_cliente Como Caracter;
     Definir producto Como Caracter;
-    Definir tipo_cliente Como Caracter;
     Definir es_estudiante Como Logico;
     Definir cantidad Como Entero;
     Definir precio_unitario, subtotal, impuesto, total Como Real;
     
-    // 2. Asignar valores a las variables
-    nombre_cliente <- 'Ana Torres';
-    producto <- 'Laptop';
-    es_estudiante <- Verdadero;
-    tipo_cliente <- 'A';
-    cantidad <- 2;
-    precio_unitario <- 1200.50;
+    // 2. Pedir al usuario que ingrese los valores
+    Escribir "Ingrese el nombre del cliente:";
+    Leer nombre_cliente;
+    
+    Escribir "Ingrese el nombre del producto:";
+    Leer producto;
+    
+    Escribir "Es el cliente estudiante? (escriba true o false):";
+    Leer es_estudiante;
+    
+    Escribir "Ingrese la cantidad de productos:";
+    Leer cantidad;
+    
+    Escribir "Ingrese el precio unitario del producto:";
+    Leer precio_unitario;
     
     // 3. Calcular el subtotal
     subtotal <- cantidad * precio_unitario;
     
     // 4. Calcular el impuesto basado en si el cliente es estudiante
     Si es_estudiante Entonces
-        impuesto <- subtotal * 0.05;
+        impuesto <- subtotal * 0.05; // 5% de impuesto para estudiantes
     SiNo
-        impuesto <- subtotal * 0.13;
+        impuesto <- subtotal * 0.13; // 13% de impuesto para no estudiantes
     FinSi
     
     // 5. Calcular el total
